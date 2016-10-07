@@ -1,19 +1,19 @@
 #csgo{
-    -fx-background-image: url("../img/csgo.jpg");
+    -fx-background-image: url("/img/csgo.jpg");
     -fx-background-repeat: stretch;
     -fx-background-size: 310 250;
     -fx-background-position: center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
 }
 #dota{
-    -fx-background-image: url("../img/dota.jpg");
+    -fx-background-image: url("/img/dota.jpg");
     -fx-background-repeat: stretch;
     -fx-background-size: 310 250;
     -fx-background-position: center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
 }
 #paladins{
-    -fx-background-image: url("../img/paladins.jpg");
+    -fx-background-image: url("/img/paladins.jpg");
     -fx-background-repeat: stretch;
     -fx-background-size: 310 250;
     -fx-background-position: center;
