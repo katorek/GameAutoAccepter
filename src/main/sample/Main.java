@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -71,6 +70,7 @@ public class Main extends Application {
     private void createIcons(final Stage stage) {
 //        ClassLoader cl = this.getClass().getClassLoader(); //test for learning
 //        Icon icon = new ImageIcon(cl.getResource("img/icon.png"));
+//        stage.getIcons().add(new javafx.scene.image.Image("file:resources/icon.png"));
         stage.getIcons().add(new javafx.scene.image.Image(Main.class.getResourceAsStream("/img/icon.png")));
         createTrayIcon(stage);
     }
@@ -80,7 +80,9 @@ public class Main extends Application {
             SystemTray tray = SystemTray.getSystemTray();
             java.awt.Image image = null;
             try{
-                image = ImageIO.read(new File("src/img/icon.png"));
+                image = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("img/icon.png"));// ("file:resources/icon.png");
+//                image = ImageIO.read(Main.class.getResourceAsStream("img/icon.png"));
+//                image = ImageIO.read(new File("src/img/icon.png"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -107,6 +109,7 @@ public class Main extends Application {
             popup.add(closeItem);
 
             if (image != null) {
+//                trayIcon = new TrayIcon(new javafx.scene.image.Image(Main.class.getResourceAsStream("/img/icon.png")),"AutoAccept",popup);
                 trayIcon = new TrayIcon(image, "AutoAccept", popup);
             }
             trayIcon.addActionListener(showListener);
